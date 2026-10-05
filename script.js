@@ -327,7 +327,7 @@ if (contactForm) {
     try {
 
       const response = await fetch(
-        "http://localhost:3000/api/contact",
+        "https://sreetharan-portfolio-backend.onrender.com/api/contact",
         {
           method: "POST",
 
