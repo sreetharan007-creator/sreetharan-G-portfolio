@@ -12,8 +12,8 @@ export const profile = {
   email: 'sreetharan.coc@gmail.com',
 };
 
-// export const OLD_SITE = 'https://sreetharan007-creator.github.io/sreetharan-G-portfolio/images/';
-export const OLD_SITE = './images/';
+export const OLD_SITE = 'https://sreetharan007-creator.github.io/sreetharan-G-portfolio/images/';
+// export const OLD_SITE = './images/';
 
 export const categories = ['All', 'Shopify', 'JavaScript', 'UI / UX', 'Mobile'];
 
@@ -33,8 +33,8 @@ export const projects = [
     kind: 'filter',
     tone: 'cobalt',
     ratio: '4 / 3',
-    // image: OLD_SITE + '453.jpg',
-    image: './images/product-filter.jpg',
+    image: OLD_SITE + '453.jpg',
+    // image: './images/product-filter.jpg',
     blurb:
       'A responsive product discovery experience with filtering, sorting, applied filters and mobile-friendly controls.',
     details: [
