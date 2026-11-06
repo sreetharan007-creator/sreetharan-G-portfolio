@@ -1,30 +1,17 @@
 import { useState } from 'react';
-import { TONES } from '../tones.js';
-import { Body as PhoneBody } from './PhoneScreen.jsx';
+
+export const TONES = {
+  cobalt: { bg: '#2F4BFF', panel: '#FFFFFF', ink: '#161A33', accent: '#FFC531', soft: '#DDE3FF' },
+  marigold: { bg: '#FFC531', panel: '#FFFFFF', ink: '#161A33', accent: '#2F4BFF', soft: '#FFF0C2' },
+  ink: { bg: '#161A33', panel: '#242A52', ink: '#F3F5F9', accent: '#FFC531', soft: '#3A4380' },
+  sky: { bg: '#CFD8FF', panel: '#FFFFFF', ink: '#161A33', accent: '#2F4BFF', soft: '#E8ECFF' },
+};
 
 const Line = ({ x, y, w, c, o = 1 }) => (
   <rect x={x} y={y} width={w} height="6" rx="3" fill={c} opacity={o} />
 );
 
-function Scene({ kind, t, tone }) {
-  if (kind.startsWith('phone:')) {
-    const bezel = tone === 'ink' ? t.soft : t.ink;
-    return (
-      <>
-        <rect x="26" y="40" width="96" height="86" rx="12" fill={t.panel} opacity="0.3" />
-        <rect x="278" y="174" width="96" height="86" rx="12" fill={t.panel} opacity="0.3" />
-        <rect x="130" y="8" width="140" height="284" rx="22" fill={bezel} />
-        <clipPath id="phone-clip"><rect x="136" y="14" width="128" height="272" rx="17" /></clipPath>
-        <g clipPath="url(#phone-clip)">
-          <svg x="136" y="14" width="128" height="272" viewBox="0 0 200 400" preserveAspectRatio="xMidYMid slice">
-            <rect width="200" height="400" fill={t.panel} />
-            <rect x="72" y="10" width="56" height="8" rx="4" fill={t.soft} />
-            <PhoneBody kind={kind.slice(6)} t={t} />
-          </svg>
-        </g>
-      </>
-    );
-  }
+function Scene({ kind, t }) {
   switch (kind) {
     case 'filter':
       return (
@@ -124,67 +111,6 @@ function Scene({ kind, t, tone }) {
           <rect x="296" y="90" width="64" height="168" rx="8" fill={t.accent} />
         </>
       );
-    case 'product':
-      return (
-        <>
-          <rect x="24" y="24" width="170" height="252" rx="14" fill={t.panel} />
-          <rect x="34" y="34" width="150" height="176" rx="10" fill={t.soft} />
-          {[0, 1, 2].map((k) => (
-            <rect key={k} x={34 + k * 52} y="220" width="46" height="44" rx="8" fill={k === 0 ? t.accent : t.soft} />
-          ))}
-          <rect x="214" y="24" width="162" height="252" rx="14" fill={t.panel} />
-          <Line x={230} y={44} w={110} c={t.ink} />
-          <Line x={230} y={62} w={44} c={t.accent} />
-          {[0, 1, 2, 3].map((k) => (
-            <rect key={k} x={230 + k * 34} y="88" width="28" height="22" rx="6" fill={k === 1 ? t.accent : t.soft} />
-          ))}
-          {[0, 1, 2].map((k) => (
-            <circle key={k} cx={240 + k * 26} cy="136" r="9" fill={k === 0 ? t.accent : t.soft} />
-          ))}
-          {[0, 1, 2].map((k) => (
-            <Line key={k} x={230} y={162 + k * 14} w={k === 2 ? 70 : 130} c={t.ink} o={0.3} />
-          ))}
-          <rect x="230" y="226" width="130" height="32" rx="16" fill={t.accent} />
-        </>
-      );
-    case 'checkout':
-      return (
-        <>
-          <rect x="24" y="24" width="214" height="252" rx="14" fill={t.panel} />
-          {[0, 1, 2].map((k) => (
-            <g key={k}>
-              <Line x={40} y={42 + k * 56} w={50} c={t.ink} o={0.5} />
-              <rect x="40" y={54 + k * 56} width="182" height="30" rx="8" fill={t.soft} />
-            </g>
-          ))}
-          <rect x="40" y="218" width="182" height="40" rx="20" fill={t.accent} />
-          <rect x="254" y="24" width="122" height="252" rx="14" fill={t.soft} />
-          {[0, 1].map((k) => (
-            <g key={k}>
-              <rect x="268" y={42 + k * 52} width="38" height="38" rx="8" fill={t.panel} />
-              <Line x={314} y={50 + k * 52} w={46} c={t.ink} />
-              <Line x={314} y={64 + k * 52} w={28} c={t.ink} o={0.4} />
-            </g>
-          ))}
-          <Line x={268} y={170} w={50} c={t.ink} o={0.5} />
-          <Line x={268} y={190} w={90} c={t.ink} />
-        </>
-      );
-    case 'banner':
-      return (
-        <>
-          <rect x="24" y="24" width="352" height="170" rx="14" fill={t.panel} />
-          <rect x="48" y="52" width="170" height="16" rx="8" fill={t.ink} />
-          <rect x="48" y="78" width="120" height="16" rx="8" fill={t.ink} />
-          <Line x={48} y={110} w={150} c={t.ink} o={0.35} />
-          <rect x="48" y="140" width="92" height="28" rx="14" fill={t.accent} />
-          <circle cx="304" cy="108" r="56" fill={t.accent} opacity="0.9" />
-          <circle cx="304" cy="108" r="32" fill={t.soft} />
-          {[0, 1, 2].map((k) => (
-            <rect key={k} x={24 + k * 122} y="208" width="106" height="68" rx="10" fill={t.panel} opacity="0.55" />
-          ))}
-        </>
-      );
     case 'quiz':
     default:
       return (
@@ -208,12 +134,12 @@ export function Mock({ kind, tone = 'cobalt' }) {
   const t = TONES[tone] || TONES.cobalt;
   return (
     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <Scene kind={kind} t={t} tone={tone} />
+      <Scene kind={kind} t={t} />
     </svg>
   );
 }
 
-// Shows the image if one exists and loads, otherwise the drawn mock-up.
+// Image if one exists and loads, otherwise the drawn mock-up.
 export default function Shot({ project, label, eager = false }) {
   const [failed, setFailed] = useState(false);
   const t = TONES[project.tone] || TONES.cobalt;

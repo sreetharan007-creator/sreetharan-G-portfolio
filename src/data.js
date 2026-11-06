@@ -13,7 +13,6 @@ export const profile = {
 };
 
 export const OLD_SITE = 'https://sreetharan007-creator.github.io/sreetharan-G-portfolio/images/';
-// export const OLD_SITE = './images/';
 
 export const categories = ['All', 'Shopify', 'JavaScript', 'UI / UX', 'Mobile'];
 
@@ -22,7 +21,8 @@ export const categories = ['All', 'Shopify', 'JavaScript', 'UI / UX', 'Mobile'];
 // tone: cobalt | marigold | ink | sky
 //
 // `shots` are the extra images on the project's own page (the first image
-// is the project's main picture). Each shot can also have `image: './images/x.jpg'`.
+// is the project's main picture, shown on cards; `overview` is a wide version
+// used on the project's own page). Each shot can also have `image: './images/x.jpg'`.
 export const projects = [
   {
     id: 'filter-sort',
@@ -33,8 +33,8 @@ export const projects = [
     kind: 'filter',
     tone: 'cobalt',
     ratio: '4 / 3',
-    image: OLD_SITE + '453.jpg',
-    // image: './images/product-filter.jpg',
+    image: './images/filter-sort.png',
+    overview: './images/filter-sort-overview.png',
     blurb:
       'A responsive product discovery experience with filtering, sorting, applied filters and mobile-friendly controls.',
     details: [
@@ -44,8 +44,8 @@ export const projects = [
     ],
     tech: ['JavaScript', 'Shopify', 'CSS'],
     shots: [
-      { kind: 'filter', tone: 'sky', caption: 'Applied filters shown as chips' },
-      { kind: 'phone:filters', tone: 'cobalt', caption: 'Filters in a drawer on phones' },
+      { kind: 'filter', tone: 'sky', caption: 'Applied filters shown as chips', image: './images/filter-sort-2.png' },
+      { kind: 'phone:filters', tone: 'cobalt', caption: 'Filters in a drawer on phones', image: './images/filter-sort-3.png' },
     ],
   },
   {
@@ -57,7 +57,8 @@ export const projects = [
     kind: 'cart',
     tone: 'marigold',
     ratio: '1 / 1',
-    image: OLD_SITE + '429.jpg',
+    image: './images/cart-drawer.png',
+    overview: './images/cart-drawer-overview.png',
     blurb:
       'A clean cart experience with quantity controls, remove functionality and dynamic totals.',
     details: [
@@ -67,8 +68,8 @@ export const projects = [
     ],
     tech: ['JavaScript', 'Shopify'],
     shots: [
-      { kind: 'phone:cart', tone: 'marigold', caption: 'The drawer on a phone' },
-      { kind: 'checkout', tone: 'cobalt', caption: 'Handing off to checkout' },
+      { kind: 'phone:cart', tone: 'marigold', caption: 'The drawer on a phone', image: './images/cart-drawer-2.png' },
+      { kind: 'checkout', tone: 'cobalt', caption: 'Handing off to checkout', image: './images/cart-drawer-3.png' },
     ],
   },
   {
@@ -80,7 +81,8 @@ export const projects = [
     kind: 'mobile',
     tone: 'ink',
     ratio: '4 / 5',
-    image: OLD_SITE + '255.jpg',
+    image: './images/mobile-store.png',
+    overview: './images/mobile-store-overview.png',
     blurb:
       'A mobile-first shopping experience focused on clean navigation and intuitive interactions.',
     details: [
@@ -90,9 +92,9 @@ export const projects = [
     ],
     tech: ['HTML', 'CSS', 'JavaScript'],
     shots: [
-      { kind: 'phone:menu', tone: 'ink', caption: 'Slide-in menu' },
-      { kind: 'phone:product', tone: 'cobalt', caption: 'Product page' },
-      { kind: 'phone:checkout', tone: 'marigold', caption: 'Checkout bar' },
+      { kind: 'phone:menu', tone: 'ink', caption: 'Slide-in menu', image: './images/mobile-store-2.png' },
+      { kind: 'phone:product', tone: 'cobalt', caption: 'Product page', image: './images/mobile-store-3.png' },
+      { kind: 'phone:checkout', tone: 'marigold', caption: 'Checkout bar', image: './images/mobile-store-4.png' },
     ],
   },
   // The projects below are sample entries. Replace the text and
@@ -106,7 +108,8 @@ export const projects = [
     kind: 'quiz',
     tone: 'sky',
     ratio: '4 / 3',
-    image: '',
+    image: './images/product-finder.png',
+    overview: './images/product-finder-overview.png',
     blurb:
       'A short step-by-step quiz that narrows a collection down to the products that fit the shopper.',
     details: [
@@ -116,8 +119,8 @@ export const projects = [
     ],
     tech: ['JavaScript', 'jQuery', 'CSS'],
     shots: [
-      { kind: 'phone:quiz', tone: 'sky', caption: 'A quiz step on a phone' },
-      { kind: 'filter', tone: 'cobalt', caption: 'Matching products after the last step' },
+      { kind: 'phone:quiz', tone: 'sky', caption: 'A quiz step on a phone', image: './images/product-finder-2.png' },
+      { kind: 'filter', tone: 'cobalt', caption: 'Matching products after the last step', image: './images/product-finder-3.png' },
     ],
   },
   {
@@ -129,7 +132,8 @@ export const projects = [
     kind: 'quick',
     tone: 'marigold',
     ratio: '1 / 1',
-    image: '',
+    image: './images/quick-view.png',
+    overview: './images/quick-view-overview.png',
     blurb:
       'Lets shoppers pick a size, check details and add to bag from the collection page.',
     details: [
@@ -139,8 +143,8 @@ export const projects = [
     ],
     tech: ['JavaScript', 'Liquid'],
     shots: [
-      { kind: 'product', tone: 'marigold', caption: 'The full product page it links to' },
-      { kind: 'phone:product', tone: 'marigold', caption: 'Quick view on a phone' },
+      { kind: 'product', tone: 'marigold', caption: 'The full product page it links to', image: './images/quick-view-2.png' },
+      { kind: 'phone:product', tone: 'marigold', caption: 'Quick view on a phone', image: './images/quick-view-3.png' },
     ],
   },
   {
@@ -152,7 +156,8 @@ export const projects = [
     kind: 'menu',
     tone: 'cobalt',
     ratio: '4 / 3',
-    image: '',
+    image: './images/mega-menu.png',
+    overview: './images/mega-menu-overview.png',
     blurb:
       'A desktop mega menu and a slide-in mobile menu that share the same content.',
     details: [
@@ -161,7 +166,7 @@ export const projects = [
       'One level at a time on phones',
     ],
     tech: ['HTML', 'CSS', 'JavaScript'],
-    shots: [{ kind: 'phone:menu', tone: 'cobalt', caption: 'The mobile version of the same menu' }],
+    shots: [{ kind: 'phone:menu', tone: 'cobalt', caption: 'The mobile version of the same menu', image: './images/mega-menu-2.png' }],
   },
   {
     id: 'sale-landing',
@@ -172,7 +177,8 @@ export const projects = [
     kind: 'banner',
     tone: 'marigold',
     ratio: '4 / 3',
-    image: '',
+    image: './images/sale-landing.png',
+    overview: './images/sale-landing-overview.png',
     blurb:
       'A campaign page with a clear offer, product highlights and a layout that holds up on phones.',
     details: [
@@ -182,8 +188,8 @@ export const projects = [
     ],
     tech: ['Liquid', 'CSS', 'JavaScript'],
     shots: [
-      { kind: 'product', tone: 'sky', caption: 'Product highlights below the banner' },
-      { kind: 'phone:product', tone: 'marigold', caption: 'The page on a phone' },
+      { kind: 'product', tone: 'sky', caption: 'Product highlights below the banner', image: './images/sale-landing-2.png' },
+      { kind: 'phone:product', tone: 'marigold', caption: 'The page on a phone', image: './images/sale-landing-3.png' },
     ],
   },
   {
@@ -195,7 +201,8 @@ export const projects = [
     kind: 'checkout',
     tone: 'sky',
     ratio: '4 / 5',
-    image: '',
+    image: './images/checkout-progress.png',
+    overview: './images/checkout-progress-overview.png',
     blurb:
       'A fixed progress bar that shows shoppers how close they are to free shipping and checkout.',
     details: [
@@ -204,13 +211,13 @@ export const projects = [
       'Messages change once the free-shipping goal is reached',
     ],
     tech: ['JavaScript', 'Shopify'],
-    shots: [{ kind: 'phone:checkout', tone: 'sky', caption: 'The bar on a phone' }],
+    shots: [{ kind: 'phone:checkout', tone: 'sky', caption: 'The bar on a phone', image: './images/checkout-progress-2.png' }],
   },
 ];
 
 // Images for one project's page: its main picture, then its extra shots.
 export const shotsOf = (p) => [
-  { kind: p.kind, tone: p.tone, image: p.image, caption: 'Overview' },
+  { kind: p.kind, tone: p.tone, image: p.overview || p.image, caption: 'Overview' },
   ...(p.shots || []),
 ];
 
@@ -219,22 +226,22 @@ export const shotsOf = (p) => [
 export const galleryCategories = ['Storefront', 'Cart and checkout', 'Mobile', 'Campaigns'];
 
 export const gallery = [
-  { id: 'g1', title: 'Collection filters', category: 'Storefront', kind: 'filter', tone: 'cobalt', ratio: '4 / 3', image: OLD_SITE + '453.jpg', caption: 'Filter sidebar with applied chips.', projectId: 'filter-sort' },
-  { id: 'g2', title: 'Cart drawer', category: 'Cart and checkout', kind: 'cart', tone: 'marigold', ratio: '1 / 1', image: OLD_SITE + '429.jpg', caption: 'Quantity controls and live totals.', projectId: 'cart-drawer' },
-  { id: 'g3', title: 'Mobile storefront', category: 'Mobile', kind: 'mobile', tone: 'ink', ratio: '4 / 5', image: OLD_SITE + '255.jpg', caption: 'A mobile-first shopping layout.', projectId: 'mobile-store' },
-  { id: 'g4', title: 'Product page', category: 'Storefront', kind: 'product', tone: 'sky', ratio: '4 / 3', image: '', caption: 'Gallery, size picker and add to bag.' },
-  { id: 'g5', title: 'Phone filters', category: 'Mobile', kind: 'phone:filters', tone: 'cobalt', ratio: '4 / 5', image: '', caption: 'Filter chips above the product list.', projectId: 'filter-sort' },
-  { id: 'g6', title: 'Checkout steps', category: 'Cart and checkout', kind: 'checkout', tone: 'cobalt', ratio: '4 / 3', image: '', caption: 'Form on the left, order summary on the right.' },
-  { id: 'g7', title: 'Sale banner', category: 'Campaigns', kind: 'banner', tone: 'marigold', ratio: '4 / 3', image: '', caption: 'One offer, one button.', projectId: 'sale-landing' },
-  { id: 'g8', title: 'Quick view', category: 'Storefront', kind: 'quick', tone: 'marigold', ratio: '1 / 1', image: '', caption: 'Pick a size without leaving the collection.', projectId: 'quick-view' },
-  { id: 'g9', title: 'Phone cart', category: 'Cart and checkout', kind: 'phone:cart', tone: 'marigold', ratio: '4 / 5', image: '', caption: 'The cart drawer at phone width.', projectId: 'cart-drawer' },
-  { id: 'g10', title: 'Mega menu', category: 'Storefront', kind: 'menu', tone: 'cobalt', ratio: '4 / 3', image: '', caption: 'Wide menu with a featured panel.', projectId: 'mega-menu' },
-  { id: 'g11', title: 'Quiz step', category: 'Campaigns', kind: 'quiz', tone: 'sky', ratio: '4 / 3', image: '', caption: 'One question per step.', projectId: 'product-finder' },
-  { id: 'g12', title: 'Slide-in menu', category: 'Mobile', kind: 'phone:menu', tone: 'ink', ratio: '1 / 1', image: '', caption: 'One level at a time.', projectId: 'mobile-store' },
-  { id: 'g13', title: 'Phone product page', category: 'Mobile', kind: 'phone:product', tone: 'cobalt', ratio: '4 / 5', image: '', caption: 'Gallery first, then size and add to bag.' },
-  { id: 'g14', title: 'Progress bar', category: 'Cart and checkout', kind: 'phone:checkout', tone: 'sky', ratio: '1 / 1', image: '', caption: 'Free-shipping progress at the bottom of the cart.', projectId: 'checkout-progress' },
-  { id: 'g15', title: 'Quiz on a phone', category: 'Campaigns', kind: 'phone:quiz', tone: 'sky', ratio: '4 / 5', image: '', caption: 'The product finder at phone width.', projectId: 'product-finder' },
-  { id: 'g16', title: 'Campaign products', category: 'Campaigns', kind: 'product', tone: 'marigold', ratio: '4 / 3', image: '', caption: 'Highlights under the hero banner.', projectId: 'sale-landing' },
+  { id: 'g1', title: 'Collection filters', category: 'Storefront', kind: 'filter', tone: 'cobalt', ratio: '4 / 3', image: './images/filter-sort.png', caption: 'Filter sidebar with applied chips.', projectId: 'filter-sort' },
+  { id: 'g2', title: 'Cart drawer', category: 'Cart and checkout', kind: 'cart', tone: 'marigold', ratio: '1 / 1', image: './images/cart-drawer.png', caption: 'Quantity controls and live totals.', projectId: 'cart-drawer' },
+  { id: 'g3', title: 'Mobile storefront', category: 'Mobile', kind: 'mobile', tone: 'ink', ratio: '4 / 5', image: './images/mobile-store.png', caption: 'A mobile-first shopping layout.', projectId: 'mobile-store' },
+  { id: 'g4', title: 'Product page', category: 'Storefront', kind: 'product', tone: 'sky', ratio: '4 / 3', image: './images/gallery-product-page.png', caption: 'Gallery, size picker and add to bag.' },
+  { id: 'g5', title: 'Phone filters', category: 'Mobile', kind: 'phone:filters', tone: 'cobalt', ratio: '4 / 5', image: './images/gallery-phone-filters.png', caption: 'Filter chips above the product list.', projectId: 'filter-sort' },
+  { id: 'g6', title: 'Checkout steps', category: 'Cart and checkout', kind: 'checkout', tone: 'cobalt', ratio: '4 / 3', image: './images/gallery-checkout-steps.png', caption: 'Form on the left, order summary on the right.' },
+  { id: 'g7', title: 'Sale banner', category: 'Campaigns', kind: 'banner', tone: 'marigold', ratio: '4 / 3', image: './images/gallery-sale-banner.png', caption: 'One offer, one button.', projectId: 'sale-landing' },
+  { id: 'g8', title: 'Quick view', category: 'Storefront', kind: 'quick', tone: 'marigold', ratio: '1 / 1', image: './images/gallery-quick-view.png', caption: 'Pick a size without leaving the collection.', projectId: 'quick-view' },
+  { id: 'g9', title: 'Phone cart', category: 'Cart and checkout', kind: 'phone:cart', tone: 'marigold', ratio: '4 / 5', image: './images/gallery-phone-cart.png', caption: 'The cart drawer at phone width.', projectId: 'cart-drawer' },
+  { id: 'g10', title: 'Mega menu', category: 'Storefront', kind: 'menu', tone: 'cobalt', ratio: '4 / 3', image: './images/gallery-mega-menu.png', caption: 'Wide menu with a featured panel.', projectId: 'mega-menu' },
+  { id: 'g11', title: 'Quiz step', category: 'Campaigns', kind: 'quiz', tone: 'sky', ratio: '4 / 3', image: './images/gallery-quiz-step.png', caption: 'One question per step.', projectId: 'product-finder' },
+  { id: 'g12', title: 'Slide-in menu', category: 'Mobile', kind: 'phone:menu', tone: 'ink', ratio: '1 / 1', image: './images/gallery-slide-in-menu.png', caption: 'One level at a time.', projectId: 'mobile-store' },
+  { id: 'g13', title: 'Phone product page', category: 'Mobile', kind: 'phone:product', tone: 'cobalt', ratio: '4 / 5', image: './images/gallery-phone-product-page.png', caption: 'Gallery first, then size and add to bag.' },
+  { id: 'g14', title: 'Progress bar', category: 'Cart and checkout', kind: 'phone:checkout', tone: 'sky', ratio: '1 / 1', image: './images/gallery-progress-bar.png', caption: 'Free-shipping progress at the bottom of the cart.', projectId: 'checkout-progress' },
+  { id: 'g15', title: 'Quiz on a phone', category: 'Campaigns', kind: 'phone:quiz', tone: 'sky', ratio: '4 / 5', image: './images/gallery-quiz-on-a-phone.png', caption: 'The product finder at phone width.', projectId: 'product-finder' },
+  { id: 'g16', title: 'Campaign products', category: 'Campaigns', kind: 'product', tone: 'marigold', ratio: '4 / 3', image: './images/gallery-campaign-products.png', caption: 'Highlights under the hero banner.', projectId: 'sale-landing' },
 ];
 
 // Phone screens for the "On a phone" slider.

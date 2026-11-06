@@ -454,3 +454,6 @@ a { color: inherit; }
 
 /* keep the project viewer a comfortable size on wide screens */
 .viewer, .viewer__caption, .strip { max-width: 980px; }
+
+/* show whole pictures (no cropping) in the viewers; the tone colour fills any gap */
+.lightbox__art .shot img, .thumb .shot img, .viewer__art .shot img { object-fit: contain; }

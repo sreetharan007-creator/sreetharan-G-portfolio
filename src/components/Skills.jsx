@@ -1,12 +1,11 @@
 import { skills, learning } from '../data.js';
-import Reveal from './Reveal.jsx';
 
-function Row({ item, learning, i }) {
+function Row({ item, learning }) {
   return (
-    <Reveal as="li" delay={i * 60} className={'row' + (learning ? ' row--learning' : '')}>
+    <li className={'row' + (learning ? ' row--learning' : '')}>
       <h3>{item.name}</h3>
       <p>{item.text}</p>
-    </Reveal>
+    </li>
   );
 }
 
@@ -19,11 +18,11 @@ export default function Skills() {
           A practical toolkit built around front-end development, e-commerce and modern web experiences.
         </p>
         <ul className="rows">
-          {skills.map((s, i) => <Row key={s.name} item={s} i={i} />)}
+          {skills.map((s) => <Row key={s.name} item={s} />)}
         </ul>
         <h3 className="subhead">Learning now</h3>
         <ul className="rows">
-          {learning.map((s, i) => <Row key={s.name} item={s} i={i} learning />)}
+          {learning.map((s) => <Row key={s.name} item={s} learning />)}
         </ul>
       </div>
     </section>

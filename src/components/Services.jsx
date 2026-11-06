@@ -1,5 +1,4 @@
 import { services } from '../data.js';
-import Reveal from './Reveal.jsx';
 
 export default function Services() {
   return (
@@ -10,14 +9,14 @@ export default function Services() {
           Need a front-end developer for your next project, store improvement or bug fix?
         </p>
         <ul className="rows rows--links">
-          {services.map((s, i) => (
-            <Reveal as="li" className="row" delay={i * 70} key={s.title}>
+          {services.map((s) => (
+            <li className="row" key={s.title}>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
-              <a className="textlink" href="#/contact">
+              <a className="textlink" href="#contact">
                 Ask about this<span className="sr-only">: {s.title}</span>
               </a>
-            </Reveal>
+            </li>
           ))}
         </ul>
       </div>

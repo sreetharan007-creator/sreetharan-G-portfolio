@@ -1,10 +1,10 @@
-import { TONES } from '../tones.js';
+import { TONES } from './Shot.jsx';
 
 const Line = ({ x, y, w, c, o = 1, h = 6 }) => (
   <rect x={x} y={y} width={w} height={h} rx={h / 2} fill={c} opacity={o} />
 );
 
-export function Body({ kind, t }) {
+function Body({ kind, t }) {
   switch (kind) {
     case 'filters':
       return (

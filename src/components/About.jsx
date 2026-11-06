@@ -1,11 +1,11 @@
 import { principles } from '../data.js';
 
-export default function About({ heading: H = 'h2' }) {
+export default function About() {
   return (
     <section className="section" id="about">
       <div className="wrap about">
         <div>
-          <H>Clean, fast interfaces for real stores.</H>
+          <h2>Clean, fast interfaces for real stores.</h2>
           <div className="prose">
             <p>
               I enjoy solving real-world front-end problems and building interfaces that are clean, responsive and
@@ -17,7 +17,7 @@ export default function About({ heading: H = 'h2' }) {
             </p>
             <p>I am also expanding into React and Node.js to build more modern and scalable web applications.</p>
           </div>
-          <a className="textlink" href="#/contact">Start a conversation</a>
+          <a className="textlink" href="#contact">Start a conversation</a>
         </div>
         <dl className="principles">
           {principles.map((p) => (

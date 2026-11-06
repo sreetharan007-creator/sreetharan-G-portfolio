@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { screens } from '../data.js';
 import PhoneScreen from './PhoneScreen.jsx';
-import { TONES } from '../tones.js';
+import { TONES } from './Shot.jsx';
 import { useReducedMotion } from '../hooks.js';
 
 export default function Screens() {

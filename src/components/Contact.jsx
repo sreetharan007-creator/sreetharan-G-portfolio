@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { profile } from '../data.js';
 
-export default function Contact({ heading: H = 'h2' }) {
+export default function Contact() {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -29,7 +29,7 @@ export default function Contact({ heading: H = 'h2' }) {
     <section className="section section--dark" id="contact">
       <div className="wrap contact">
         <div>
-          <H>Have a store or a bug that needs attention?</H>
+          <h2>Have a store or a bug that needs attention?</h2>
           <p className="section__intro">
             Send a few lines about the project. I will reply by email.
           </p>

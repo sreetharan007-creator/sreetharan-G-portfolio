@@ -6,7 +6,7 @@ import { useReducedMotion } from '../hooks.js';
 const featured = projects.filter((p) => p.featured);
 const DELAY = 5500;
 
-export default function Hero() {
+export default function Hero({ onOpen }) {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduced = useReducedMotion();
@@ -37,7 +37,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" id="top">
       <div className="wrap hero__grid">
         <div className="hero__copy">
           <p className="status">
@@ -50,8 +50,8 @@ export default function Hero() {
             layouts, built with JavaScript, Liquid, HTML and CSS.
           </p>
           <div className="actions">
-            <a className="btn" href="#/work">See the work</a>
-            <a className="btn btn--ghost" href="#/contact">Start a project</a>
+            <a className="btn" href="#work">See the work</a>
+            <a className="btn btn--ghost" href="#contact">Start a project</a>
           </div>
           <p className="tools">JavaScript, Shopify, Liquid, HTML, CSS, jQuery</p>
         </div>
@@ -96,9 +96,13 @@ export default function Hero() {
               <h2 className="slider__title">{featured[i].title}</h2>
               <p className="slider__tags">{featured[i].tags.join(', ')}</p>
             </div>
-            <a className="btn btn--small" href={`#/work/${featured[i].id}`}>
+            <button
+              type="button"
+              className="btn btn--small"
+              onClick={() => onOpen(featured, i)}
+            >
               View project
-            </a>
+            </button>
           </div>
 
           <div className="slider__nav">

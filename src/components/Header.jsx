@@ -2,29 +2,27 @@ import { useEffect, useState } from 'react';
 import { profile } from '../data.js';
 
 const links = [
-  ['Home', '/'],
-  ['Work', '/work'],
-  ['Gallery', '/gallery'],
-  ['About', '/about'],
+  ['About', '#about'],
+  ['Skills', '#skills'],
+  ['Work', '#work'],
+  ['Services', '#services'],
+  ['Contact', '#contact'],
 ];
 
-export default function Header({ route }) {
+export default function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 8);
-    on();
-    window.addEventListener('scroll', on, { passive: true });
-    return () => window.removeEventListener('scroll', on);
-  }, []);
-  const close = () => setOpen(false);
-  const current = (path) => (path === '/' ? route === '/' : route.startsWith(path));
+    if (!open) return;
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
 
   return (
-    <header className={'header' + (scrolled ? ' is-scrolled' : '')}>
+    <header className="header">
       <div className="wrap header__bar">
-        <a className="brand" href="#/" onClick={close}>
+        <a className="brand" href="#top" onClick={() => setOpen(false)}>
           <span className="brand__mark" aria-hidden="true">S</span>
           <span className="brand__text">
             <strong>Sreetharan</strong>
@@ -33,13 +31,13 @@ export default function Header({ route }) {
         </a>
 
         <nav id="site-nav" className={'nav' + (open ? ' is-open' : '')} aria-label="Main">
-          {links.map(([label, path]) => (
-            <a key={path} href={`#${path}`} aria-current={current(path) ? 'page' : undefined} onClick={close}>
+          {links.map(([label, href]) => (
+            <a key={href} href={href} onClick={() => setOpen(false)}>
               {label}
             </a>
           ))}
-          <a className="btn btn--small nav__cta" href="#/contact" aria-current={route === '/contact' ? 'page' : undefined} onClick={close}>
-            Contact
+          <a className="btn btn--small nav__cta" href="#contact" onClick={() => setOpen(false)}>
+            Start a project
           </a>
         </nav>
 
